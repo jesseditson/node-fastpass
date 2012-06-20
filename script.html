@@ -1,0 +1,23 @@
+<!--
+  Script template for the fastpass script tag.
+  This will be parsed by fastpass.js, replacing [[domain]] with the domain from fastpass, and [[url]] with the url.
+-->
+<script type="text/javascript">
+  var GSFN = GSFN || {}
+  (function(){
+    var add_js = function(jsid,url){
+      var head = document.getElementsByTagName[0],
+          script = document.createElement('script')
+      script.id = jsid
+      script.type = 'text/javascript'
+      script.src = url
+      head.appendChild(script)
+    }
+    add_js("fastpass_common",document.location.protocol + "//[[domain]]/javascripts/fastpass.js")
+    var prevLoad = window.onload
+    window.onload = function(){
+      if(prevLoad) prevLoad()
+      add_js("fastpass", [[url]])
+    }
+  })()
+</script>

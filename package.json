@@ -1,0 +1,24 @@
+{
+  "author": "Jesse Ditson <jesse.ditson@gmail.com>",
+  "name": "fastpass",
+  "description": "A node.js library for getsatsfaction fastpass",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jesseditson/node-fastpass",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jesseditson/node-fastpass.git"
+  },
+  "main": "fastpass.js",
+  "scripts": {
+    "test": "vows --spec"
+  },
+  "engines": {
+    "node": "0.6.x"
+  },
+  "dependencies": {
+    "oauth": "~0.9.7",
+    "request": "~2.9.202"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
