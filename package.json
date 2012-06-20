@@ -2,7 +2,7 @@
   "author": "Jesse Ditson <jesse.ditson@gmail.com>",
   "name": "fastpass",
   "description": "A node.js library for getsatsfaction fastpass",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/jesseditson/node-fastpass",
   "repository": {
     "type": "git",
