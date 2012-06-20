@@ -15,10 +15,7 @@
   "engines": {
     "node": "0.6.x"
   },
-  "dependencies": {
-    "oauth": "~0.9.7",
-    "request": "~2.9.202"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "optionalDependencies": {}
 }
