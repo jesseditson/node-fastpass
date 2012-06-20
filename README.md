@@ -21,30 +21,30 @@ Require it:
 Instantiate it:
 
     var fastPass = new FastPass({
-     // optional, defaults to "getsatisfaction.com"
-     domain : "getsatisfaction.com",
-     // required, your consumer key
-     consumer_key : "xi2vaxgpp06m",
-     // required, your consumer secret
-     consumer_secret : "ly68der0hk8idfr5c73ozyq56jpwstd1",
-     // optional at instantiation - email of the user
-     email : "scott@getsatisfaction.com",
-     // optional at instantiation - Name of the user
-     name : "Scott",
-     // optional at instantiation - unique ID of user (must stay the same for the lifetime the user in your system)
-     unique_identifier : "nullstyle",
-     // optional boolean, defaults to false
-     is_secure : false,
-     // optional object, any private fields you like. defaults to {}.
-     private_fields : {}
-   })
+       // optional, defaults to "getsatisfaction.com"
+       domain : "getsatisfaction.com",
+       // required, your consumer key
+       consumer_key : "xi2vaxgpp06m",
+       // required, your consumer secret
+       consumer_secret : "ly68der0hk8idfr5c73ozyq56jpwstd1",
+       // optional at instantiation - email of the user
+       email : "scott@getsatisfaction.com",
+       // optional at instantiation - Name of the user
+       name : "Scott",
+       // optional at instantiation - unique ID of user (must stay the same for the lifetime the user in your system)
+       unique_identifier : "nullstyle",
+       // optional boolean, defaults to false
+       is_secure : false,
+       // optional object, any private fields you like. defaults to {}.
+       private_fields : {}
+    })
 
 ### Implementation:
 
 
 #### Using the Script tag
 
-  fastPass.script({
+    fastPass.script({
       email : "scott@getsatisfaction.com",
       name : "Scott",
       unique_identifier : "nullstyle"
