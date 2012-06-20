@@ -123,9 +123,9 @@ FastPass.prototype.script = function(options,callback){
       callback(err)
       return false
     }
-    var script = scriptTemplate.replace(/<!--[\s\S]*?-->/g,'').replace('[[url]]',escapeHtml(url)).replace('[[domain]]',this.options.domain)
+    var script = scriptTemplate.replace(/<!--[\s\S]*?-->/g,'').replace('[[url]]',url).replace('[[domain]]',this.options.domain)
     callback(null,script)
-  })
+  }.bind(this))
 }
 
 // oAuth Helpers
