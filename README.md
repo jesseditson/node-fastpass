@@ -41,7 +41,6 @@ Instantiate it:
 
 ### Implementation:
 
-
 #### Using the Script tag
 
     fastPass.script({
@@ -91,3 +90,41 @@ Include the generated URL in the param named "fastpass" in all links to Get Sati
     Unique Id     |    Yes     | Must remain unchanged for the lifetime of the user's account in your system.
     Is Secure     |    No      | (defaults to false)
     Private Fields|    No      | Key/value pairs to send along with the user to Get Satisfaction.
+---
+
+### Example Setup:
+
+The getSatisfaction setup is bi-directional, the smoothest sign on process happens when you have a CNAME set, a cookie with the current user, and a GSFN script on the page after login.
+
+In an express server, here's how that might look:
+
+    // Assumes that you've require'd and instantiated FastPass with your credentials.
+    // a-la: var fastPass = new FastPass(<options>)
+    
+    // getsatisfaction middleware
+    // assumes that you've got authentication middleware before this that sets `req.authenticated` and adds `user` to `req.session`.
+    // these assumptions can obviously be replaced by however your app works, this should get you most of the way there.
+    app.use(function(req,res,next){
+      if(req.authenticated){
+        // add a cookie for getSatisfaction single sign on
+        // crudely strips the subdomain - probably should be smarter to avoid clobbering non-subdomain urls.
+        var cookieDomain = req.headers.host.replace('^[^\.]*',''),
+            user = req.session.user
+        fastPass.url({name : user.first_name + " " + user.last_name, email : user.email, unique_identifier : user.id },function(err,url){
+          // this is the important part - sets a cookie for your domain.
+          res.cookie('fastpass',url, {domain : cookieDomain})
+          next()
+        })
+      } else {
+        next()
+      }
+    })
+
+You'll also need to expose the script on all your logged-in pages:
+
+    app.get('/some/logged/in/route',function(req,res){
+      var user = req.session.user
+      fastPass.script({name : user.first_name + " " + user.last_name, email : user.email, unique_identifier : user.id },function(err,script){
+        // do your res.send() or whatever, render the script
+      })
+    })
