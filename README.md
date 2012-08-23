@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/jesseditson/node-fastpass.png)](http://travis-ci.org/jesseditson/node-fastpass)
 node-fastpass
 =============
 
