@@ -3,7 +3,7 @@
   "license": "BSD-3-Clause",
   "name": "fastpass",
   "description": "A node.js library for getsatsfaction fastpass",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/jesseditson/node-fastpass",
   "repository": {
     "type": "git",
