@@ -1,5 +1,6 @@
 {
   "author": "Jesse Ditson <jesse.ditson@gmail.com>",
+  "license": "BSD-3-Clause",
   "name": "fastpass",
   "description": "A node.js library for getsatsfaction fastpass",
   "version": "0.0.2",
